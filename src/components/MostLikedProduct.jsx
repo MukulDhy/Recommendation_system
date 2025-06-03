@@ -31,7 +31,7 @@ const MostLikedProduct = () => {
       <div className="max-w-container mx-auto">
         <div className="title">
           <h2 className="text-primeColor text-center font-titleFont font-bold text-2xl">
-            Trending Products
+            MostLike Products
           </h2>
           <div className="bg-lightBaground py-8">
             <div className="container mx-auto px-1">
