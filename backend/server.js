@@ -12,6 +12,7 @@ colors.enable();
 
 dotenv.config({ path: "config/config.env" });
 
+const PORT = process.env.PORT || 5000;
 const app = require("./app");
 
 connectionMongoDb();
@@ -42,10 +43,9 @@ console.log(
 );
 
 // Start server
-const server = app.listen(process.env.PORT, "localhost", () => {
+const server = app.listen(PORT, "localhost", () => {
   console.log(
-    `Server is running on http://localhost:${process.env.PORT}`.underline
-      .bgGreen
+    `Server is running on http://localhost:${PORT}`.underline.bgGreen
   );
   console.log(
     `Cloudinary is connected to ${process.env.CLOUDINARY_NAME}`.bgCyan.black

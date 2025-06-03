@@ -23,8 +23,7 @@ app.use(cookieParser());
 // CORS headers
 // Configure CORS
 const corsOptions = {
-  origin: "http://localhost:5173",
-  credentials: true,
+  origin: "*",
 };
 app.use(cors(corsOptions));
 
