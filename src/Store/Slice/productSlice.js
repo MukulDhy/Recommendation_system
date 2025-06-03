@@ -7,7 +7,7 @@ export const fetchUserViewHistory = createAsyncThunk(
   async (token) => {
     try {
       const response = await axios.get(
-        `http://localhost:4000/api/user/viewHistory`,
+        `https://recommendation-system-server.onrender.com/api/user/viewHistory`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -25,7 +25,7 @@ export const fetchLikedProducts = createAsyncThunk(
   async (userId) => {
     try {
       const response = await axios.get(
-        `http://localhost:4000/api/products/liked/${userId}`
+        `https://recommendation-system-server.onrender.com/api/products/liked/${userId}`
       );
       return response.data; // Return liked products data
     } catch (error) {
@@ -40,7 +40,7 @@ export const fetchRecommendedProducts = createAsyncThunk(
   async (userId) => {
     try {
       const response = await axios.get(
-        `http://localhost:4000/api/products/recommended/${userId}`
+        `https://recommendation-system-server.onrender.com/api/products/recommended/${userId}`
       );
       return response.data; // Return recommended products data
     } catch (error) {
@@ -55,7 +55,7 @@ export const rateProduct = createAsyncThunk(
   async ({ id, newRating, token }) => {
     try {
       const response = await axios.post(
-        `http://localhost:4000/api/products/rate/${id}`,
+        `https://recommendation-system-server.onrender.com/api/products/rate/${id}`,
         { rating: newRating },
         {
           headers: { Authorization: `Bearer ${token}` },

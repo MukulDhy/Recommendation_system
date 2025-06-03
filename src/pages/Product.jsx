@@ -12,7 +12,7 @@ const ProductSearch = () => {
     const fetchCategories = async () => {
       try {
         const response = await fetch(
-          "http://localhost:4000/api/products/categories"
+          "https://recommendation-system-server.onrender.com/api/products/categories"
         );
         const data = await response.json();
         setCategories(data);
@@ -28,7 +28,9 @@ const ProductSearch = () => {
     const fetchFilteredProducts = async () => {
       try {
         const response = await fetch(
-          `http://localhost:4000/api/products/all?keyword=${searchQuery + selectedCategory}`
+          `https://recommendation-system-server.onrender.com/api/products/all?keyword=${
+            searchQuery + selectedCategory
+          }`
         );
         const data = await response.json();
         setFilteredProducts(data.products);
@@ -77,7 +79,6 @@ const ProductSearch = () => {
           onChange={handleSearchChange}
           className="w-full md:w-4/5 p-4 rounded border border-gray-300 transition duration-300 ease-in-out transform hover:scale-100"
         />
-        
 
         <div className="bg-lightBaground py-8">
           <div className="container mx-auto px-1">

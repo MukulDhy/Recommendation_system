@@ -30,7 +30,7 @@ const ProductScreen = () => {
     const fetchProduct = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:4000/api/products/find/${id}`,
+          `https://recommendation-system-server.onrender.com/api/products/find/${id}`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -40,10 +40,10 @@ const ProductScreen = () => {
         console.error("Error fetching product:", error);
       }
     };
-    
+
     fetchProduct();
   }, [id, token]);
-  
+
   const { user } = useSelector((state) => state.user);
   if (!user) {
     return <ProtectedRouteError></ProtectedRouteError>;
@@ -51,7 +51,7 @@ const ProductScreen = () => {
   const handleLike = async (productId) => {
     try {
       const response = await axios.put(
-        `http://localhost:4000/api/user/wishlist/${productId}`,
+        `https://recommendation-system-server.onrender.com/api/user/wishlist/${productId}`,
         {},
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -70,7 +70,7 @@ const ProductScreen = () => {
     if (hasRated) return;
     try {
       const response = await axios.post(
-        `http://localhost:4000/api/products/rate/${id}`,
+        `https://recommendation-system-server.onrender.com/api/products/rate/${id}`,
         { rating: newRating },
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -92,7 +92,6 @@ const ProductScreen = () => {
   if (!product) {
     return <Loading />;
   }
-  
 
   const toggleDescription = () => {
     setShowFullDescription(!showFullDescription);

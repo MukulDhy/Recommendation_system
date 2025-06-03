@@ -12,7 +12,7 @@ const RecommendedProduct = () => {
     const fetchProducts = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:4000/api/products/recommend",
+          "https://recommendation-system-server.onrender.com/api/products/recommend",
           {
             headers: { Authorization: `Bearer ${token}` },
           }

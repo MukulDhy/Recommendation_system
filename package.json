@@ -1,5 +1,5 @@
 {
-  "proxy":"http://localhost:4000",
+  "proxy":"https://recommendation-system-server.onrender.com",
   "name": "frontend",
   "private": true,
   "version": "0.0.0",

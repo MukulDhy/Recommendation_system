@@ -11,7 +11,7 @@ const MostLikedProduct = () => {
     const fetchProducts = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:4000/api/products/most-liked"
+          "https://recommendation-system-server.onrender.com/api/products/most-liked"
         ); // Replace with your backend API endpoint
         const data = response.data;
         console.log(data);

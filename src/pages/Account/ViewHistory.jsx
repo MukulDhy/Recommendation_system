@@ -17,7 +17,7 @@ const ViewHistory = () => {
       if (!viewHistory) {
         try {
           const response = await axios.get(
-            `http://localhost:4000/api/user/viewHistory`,
+            `https://recommendation-system-server.onrender.com/api/user/viewHistory`,
             {
               headers: { Authorization: `Bearer ${token}` },
             }
@@ -35,7 +35,7 @@ const ViewHistory = () => {
   const handleRemoveProduct = async (productId) => {
     try {
       const response = await axios.post(
-        `http://localhost:4000/api/products/deleteHistory/${productId}`,
+        `https://recommendation-system-server.onrender.com/api/products/deleteHistory/${productId}`,
         {},
         {
           headers: { Authorization: `Bearer ${token}` },

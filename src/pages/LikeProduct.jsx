@@ -16,7 +16,7 @@ const Wishlist = () => {
       if (!wishlist) {
         try {
           const response = await axios.get(
-            `http://localhost:4000/api/user/wishlist`,
+            `https://recommendation-system-server.onrender.com/api/user/wishlist`,
             {
               headers: { Authorization: `Bearer ${token}` },
             }
@@ -34,7 +34,7 @@ const Wishlist = () => {
   const handleRemoveProduct = async (productId) => {
     try {
       const response = await axios.delete(
-        `http://localhost:4000/api/user/wishlist/${productId}`,
+        `https://recommendation-system-server.onrender.com/api/user/wishlist/${productId}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }

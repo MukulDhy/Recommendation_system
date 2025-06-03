@@ -15,7 +15,7 @@ const setCookie = (name, value, days) => {
 export const loginUser = createAsyncThunk("user/loginUser", async (info) => {
   try {
     const response = await axios.post(
-      `http://localhost:4000/api/user/login`,
+      `https://recommendation-system-server.onrender.com/api/user/login`,
       info
     );
     console.log(response);
@@ -34,7 +34,7 @@ export const registerUser = createAsyncThunk(
   async (info) => {
     try {
       const response = await axios.post(
-        `http://localhost:4000/api/user/register`,
+        `https://recommendation-system-server.onrender.com/api/user/register`,
         info
       );
       localStorage.setItem("token", response.data.token); // Store token in localStorage

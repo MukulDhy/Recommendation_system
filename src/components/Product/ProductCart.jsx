@@ -9,10 +9,9 @@ const ProductCart = ({ product }) => {
   const { token } = useSelector((state) => state.user);
   const handleLike = async (productId) => {
     try {
-
-      console.log(product)
+      console.log(product);
       const response = await axios.put(
-        `http://localhost:4000/api/user/wishlist/${productId}`,
+        `https://recommendation-system-server.onrender.com/api/user/wishlist/${productId}`,
         {},
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -58,7 +57,9 @@ const ProductCart = ({ product }) => {
           : product.description.slice(0, 100) + "..."}
       </p>
       <div className="flex items-center justify-between mt-4">
-        <span className="text-gray-900 font-bold text-lg">₹{product.price}</span>
+        <span className="text-gray-900 font-bold text-lg">
+          ₹{product.price}
+        </span>
         <button
           onClick={() => handleLike(product._id)}
           className={`w-1/2 py-2 px-4 rounded-full font-bold ${
@@ -74,8 +75,6 @@ const ProductCart = ({ product }) => {
     </div>
   );
 };
-
-
 
 ProductCart.propTypes = {
   product: PropTypes.shape({
