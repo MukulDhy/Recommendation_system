@@ -43,10 +43,8 @@ console.log(
 );
 
 // Start server
-const server = app.listen(PORT, "localhost", () => {
-  console.log(
-    `Server is running on http://localhost:${PORT}`.underline.bgGreen
-  );
+const server = app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Server is running on http://0.0.0.0:${PORT}`.underline.bgGreen);
   console.log(
     `Cloudinary is connected to ${process.env.CLOUDINARY_NAME}`.bgCyan.black
       .underline
