@@ -1,1 +1,1 @@
-export const hostName = "http://localhost:5173";
+export const hostName = "https://recommendation-system-server.onrender.com";
